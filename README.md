@@ -1,5 +1,7 @@
 I was able to migrate a RichTextField to StreamField with a RichTextBlock with this script (this assumes a schema that looks like the first 3 chapters of the Wagtail Getting Started tutorial). I found that it was easier to think about this process by breaking it into distinct steps: fresh db from backup/make backup, schema migration, data migration, and admin/template alterations. I found that I needed to loop through each BlogPost and all of its associated PageRevision. Editing the live published data was straightforward, but the drafts are stored as serialized JSON two levels deep, which was tricky to figure out how to interact with. Hopefully this script helps others. Note: this script doesn't migrate in reverse.
 
+More explaination in this blog post https://www.cassidyarden.com/blog/04-03-2019-migrating-richtextfields-to-streamfield-in-wagtail
+
 0004_convert_data.py
 ```
 import json
